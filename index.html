@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="emerald">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Anurag Dutta — B.Tech Computer Science and Engineering student." />
+  <meta name="author" content="Anurag Dutta" />
+  <title>Anurag Dutta — Computer Science & Engineering</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2311141c'/><text x='50' y='64' font-size='48' font-family='sans-serif' font-weight='700' fill='%232ee59d' text-anchor='middle'>AD</text></svg>" />
+
+  <!-- Google Fonts: Plus Jakarta Sans, Inter, Outfit, DM Sans, Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress-bar" id="scrollProgressBar" aria-hidden="true"></div>
+
+  <!-- Ambient Animated Background -->
+  <div class="ambient-background" aria-hidden="true">
+    <div class="ambient-glow orb-1"></div>
+    <div class="ambient-glow orb-2"></div>
+    <div class="ambient-glow orb-3"></div>
+    <div class="ambient-grid"></div>
+    <div class="cursor-glow" id="cursorGlow"></div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="site-header" id="header">
+    <div class="header-container container">
+      <a href="#home" class="brand-logo" aria-label="Anurag Dutta">
+        Anurag Dutta<span class="accent-dot">.</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="#home" class="nav-item active">Home</a></li>
+          <li><a href="#profile" class="nav-item">Profile</a></li>
+          <li><a href="#about" class="nav-item">About</a></li>
+          <li><a href="#academics" class="nav-item">Academics</a></li>
+          <li><a href="#skills" class="nav-item">Skills</a></li>
+          <li><a href="#projects" class="nav-item">Projects</a></li>
+          <li><a href="#beyond" class="nav-item">Beyond Code</a></li>
+          <li><a href="#contact" class="nav-item nav-contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Theme & Font Style Switcher Pill -->
+      <div class="theme-picker-wrap">
+        <span class="theme-label" title="Switch color palette and font style">Style:</span>
+        <div class="theme-buttons" role="group" aria-label="Color Palette & Font Selector">
+          <button class="theme-dot-btn active" data-set-theme="emerald" title="Emerald Mint + Plus Jakarta Sans"
+            aria-label="Emerald theme">
+            <span class="dot-swatch emerald-swatch"></span>
+          </button>
+          <button class="theme-dot-btn" data-set-theme="amber" title="Solar Amber + Outfit Font"
+            aria-label="Amber theme">
+            <span class="dot-swatch amber-swatch"></span>
+          </button>
+          <button class="theme-dot-btn" data-set-theme="terracotta" title="Warm Terracotta + Plus Jakarta Sans"
+            aria-label="Terracotta theme">
+            <span class="dot-swatch terracotta-swatch"></span>
+          </button>
+          <button class="theme-dot-btn" data-set-theme="lime" title="Electric Lime + Space Grotesk"
+            aria-label="Electric Lime theme">
+            <span class="dot-swatch lime-swatch"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <ul class="mobile-menu-list">
+        <li><a href="#home" class="mobile-link">Home</a></li>
+        <li><a href="#profile" class="mobile-link">Profile</a></li>
+        <li><a href="#about" class="mobile-link">About</a></li>
+        <li><a href="#academics" class="mobile-link">Academics</a></li>
+        <li><a href="#skills" class="mobile-link">Skills</a></li>
+        <li><a href="#projects" class="mobile-link">Projects</a></li>
+        <li><a href="#beyond" class="mobile-link">Beyond Code</a></li>
+        <li><a href="#contact" class="mobile-link highlight">Contact Me</a></li>
+      </ul>
+      <div class="mobile-theme-bar">
+        <span>Choose Theme &amp; Font:</span>
+        <div class="theme-buttons mobile-theme-buttons">
+          <button class="theme-dot-btn" data-set-theme="emerald">Emerald</button>
+          <button class="theme-dot-btn" data-set-theme="amber">Amber</button>
+          <button class="theme-dot-btn" data-set-theme="terracotta">Terracotta</button>
+          <button class="theme-dot-btn" data-set-theme="lime">Lime</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- SECTION 1: HOME (HERO) -->
+    <section id="home" class="hero-section">
+      <div class="container hero-layout">
+        <div class="hero-box">
+          <h1 class="hero-title">
+            Hi, I’m Anurag Dutta. <br />
+            Building software with <span class="highlight-accent">clear logic</span> and <span
+              class="highlight-alt">thoughtful craft</span>.
+          </h1>
+
+          <p class="hero-description">
+            I am a computer science student passionate about clean architecture, core data structures, and building
+            dependable web applications. Alongside engineering, I channel creative energy into theatre, literature, and
+            graphic design.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#projects" class="btn btn-primary">View Current Work</a>
+            <a href="#contact" class="btn btn-outline">Get In Touch</a>
+          </div>
+
+          <div class="hero-quick-meta">
+            <span>Core Focus: Software Engineering &amp; Systems</span>
+            <span class="meta-dot">•</span>
+            <span>Open for Internships &amp; Collaborations</span>
+          </div>
+        </div>
+
+        <!-- Floating Interactive Moving Elements Cluster -->
+        <div class="hero-floating-cluster" aria-hidden="true">
+          <div class="float-tag float-1">
+            <span class="tag-symbol">{ }</span>
+            <span>clean_code</span>
+          </div>
+          <div class="float-tag float-2">
+            <span class="tag-symbol">⚡</span>
+            <span>O(log N)</span>
+          </div>
+          <div class="float-tag float-3">
+            <span class="tag-symbol">🧱</span>
+            <span>OOP &amp; C++</span>
+          </div>
+          <div class="float-tag float-4">
+            <span class="tag-symbol">&lt;/&gt;</span>
+            <span>full_stack</span>
+          </div>
+          <div class="float-tag float-5">
+            <span class="tag-symbol">💾</span>
+            <span>DBMS &amp; SQL</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: PROFILE (PHOTO SHOWCASE) -->
+    <section id="profile" class="section">
+      <div class="container">
+        <div class="section-title-wrap scroll-reveal">
+          <span class="section-kicker">01 / Profile</span>
+          <h2 class="section-heading">Photographs</h2>
+          <p class="section-desc">Snapshots from academic life, student activities, and creative pursuits.</p>
+        </div>
+
+        <div class="profile-cards-grid">
+          <!-- Photo Card 1: Academic & Development -->
+          <div class="photo-card active scroll-reveal" id="photoCard1">
+            <div class="photo-image-holder">
+              <div class="photo-placeholder-box bg-accent-tint">
+                <div class="avatar-icon">
+                  <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                    <circle cx="12" cy="7" r="4" />
+                  </svg>
+                </div>
+                <span class="photo-subtext">Portrait 01</span>
+                <img src="profile (1).jpg" alt="Anurag Dutta Portrait" class="real-photo" />
+              </div>
+            </div>
+            <div class="photo-details">
+              <span class="photo-tag">Engineering</span>
+              <h3 class="photo-label">Academic &amp; Development</h3>
+              <p class="photo-caption">Building my foundation in computer science and taking small steps towards
+                becoming a better developer.</p>
+            </div>
+          </div>
+
+          <!-- Photo Card 2: Creative & Theatre -->
+          <div class="photo-card scroll-reveal" id="photoCard2">
+            <div class="photo-image-holder">
+              <div class="photo-placeholder-box bg-alt-tint">
+                <div class="avatar-icon alt">
+                  <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+                    <line x1="9" y1="9" x2="9.01" y2="9" />
+                    <line x1="15" y1="9" x2="15.01" y2="9" />
+                  </svg>
+                </div>
+                <span class="photo-subtext">Portrait 02</span>
+                <img src="profile.jpg" alt="Anurag Dutta Theatre" class="real-photo" />
+              </div>
+            </div>
+            <div class="photo-details">
+              <span class="photo-tag">Nature</span>
+              <h3 class="photo-label">A Moment of Calm</h3>
+              <p class="photo-caption">Taking a break from the routine, enjoying the outdoors, and finding inspiration
+                in simple moments.</p>
+            </div>
+          </div>
+
+          <!-- Photo Card 3: Campus & Collaboration -->
+          <div class="photo-card scroll-reveal" id="photoCard3">
+            <div class="photo-image-holder">
+              <div class="photo-placeholder-box bg-neutral-tint">
+                <div class="avatar-icon neutral">
+                  <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <rect width="18" height="14" x="3" y="4" rx="2" />
+                    <line x1="12" y1="18" x2="12" y2="21" />
+                    <line x1="8" y1="21" x2="16" y2="21" />
+                  </svg>
+                </div>
+                <span class="photo-subtext">Portrait 03</span>
+                <img src="profile (2).jpg" alt="Anurag Dutta Campus" class="real-photo" />
+              </div>
+            </div>
+            <div class="photo-details">
+              <span class="photo-tag">Campus</span>
+              <h3 class="photo-label">College Life</h3>
+              <p class="photo-caption">Capturing moments from college life, where every day brings new experiences and
+                opportunities to grow.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: ABOUT ME -->
+    <section id="about" class="section section-alt">
+      <div class="container">
+        <div class="section-title-wrap scroll-reveal">
+          <span class="section-kicker">02 / Background</span>
+          <h2 class="section-heading">About Me</h2>
+        </div>
+
+        <div class="about-simple-grid">
+          <div class="about-main-text scroll-reveal">
+            <p class="lead-text">
+              I am an undergraduate student in <strong>Computer Science and Engineering</strong>, focused on mastering
+              fundamental computing concepts, writing clean code, and building practical applications.
+            </p>
+            <p>
+              My journey began with an innate curiosity about how digital systems turn abstract logic into tangible
+              real-world tools. Today, I split my focus between algorithms, system principles, and responsive web
+              technologies.
+            </p>
+            <p>
+              Beyond the computer screen, I actively explore theatre, creative writing, and graphic design. These
+              multidisciplinary interests teach me to communicate clearly, structure work with intent, and appreciate
+              the human side of software engineering.
+            </p>
+
+            <div class="about-highlights-row">
+              <div class="highlight-item">
+                <span class="highlight-number">01</span>
+                <h4>Clean Architecture</h4>
+                <p>Prioritizing readable, maintainable, and modular codebases.</p>
+              </div>
+              <div class="highlight-item">
+                <span class="highlight-number">02</span>
+                <h4>Continuous Learning</h4>
+                <p>Consistently expanding my foundational knowledge in algorithms and modern stacks.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick facts summary card -->
+          <div class="about-facts-card scroll-reveal">
+            <h3 class="facts-title">Quick Overview</h3>
+            <ul class="facts-list">
+              <li>
+                <span class="fact-label">Degree</span>
+                <span class="fact-value">B.Tech in Computer Science &amp; Engineering</span>
+              </li>
+              <li>
+                <span class="fact-label">Status</span>
+                <span class="fact-value">Undergraduate Student</span>
+              </li>
+              <li>
+                <span class="fact-label">Key Interests</span>
+                <span class="fact-value">MERN Stack Development, C/C++, Python, Computer Vision</span>
+              </li>
+              <li>
+                <span class="fact-label">Based in</span>
+                <span class="fact-value">Assam</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: ACADEMIC JOURNEY -->
+    <section id="academics" class="section">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="section-kicker">03 / Education</span>
+          <h2 class="section-heading">Academic Journey</h2>
+          <p class="section-desc">My educational progression from secondary school to my current engineering degree.</p>
+        </div>
+
+        <div class="academic-timeline">
+          <!-- Step 1: High School -->
+          <div class="timeline-step scroll-reveal" data-step="1">
+            <div class="step-indicator">
+              <span class="step-circle">10</span>
+              <!-- Perfectly anchored connector line from 10 down to 12 -->
+              <div class="step-connector-line" aria-hidden="true">
+                <div class="line-glow-pulse"></div>
+              </div>
+            </div>
+            <div class="step-content">
+              <div class="step-meta">
+                <span class="step-badge">High School</span>
+                <span class="step-years">[2010 – 2022] <!-- EDIT HERE --></span>
+              </div>
+              <h3 class="step-title">High School Certificate (Class X)</h3>
+              <p class="step-institution">Shankardev Shishu Niketan, Dergaon <!-- EDIT HERE --></p>
+              <p class="step-desc">Built a strong academic foundation while participating in quiz competitions, speech
+                contests, and recitation, and helping organize cultural events that strengthened my communication,
+                confidence, and leadership skills.</p>
+            </div>
+          </div>
+
+          <!-- Step 2: Higher Secondary -->
+          <div class="timeline-step scroll-reveal" data-step="2">
+            <div class="step-indicator">
+              <span class="step-circle">12</span>
+              <!-- Perfectly anchored connector line from 12 down to CS -->
+              <div class="step-connector-line" aria-hidden="true">
+                <div class="line-glow-pulse"></div>
+              </div>
+            </div>
+            <div class="step-content">
+              <div class="step-meta">
+                <span class="step-badge">Higher Secondary</span>
+                <span class="step-years">[2022 – 2024] <!-- EDIT HERE --></span>
+              </div>
+              <h3 class="step-title">Higher Secondary (Class XII) — Science Stream</h3>
+              <p class="step-institution">Radiant College, Dergaon <!-- EDIT HERE --></p>
+              <p class="step-desc">Focused on Physics, Chemistry, Mathematics, and Biology while preparing for
+                competitive entrance examinations for higher education.</p>
+            </div>
+          </div>
+
+          <!-- Step 3: B.Tech CSE (Terminal node — No line below CS) -->
+          <div class="timeline-step current scroll-reveal" data-step="3">
+            <div class="step-indicator">
+              <span class="step-circle current-dot">CS</span>
+            </div>
+            <div class="step-content current-content">
+              <div class="step-meta">
+                <span class="step-badge badge-active">Current Program</span>
+                <span class="step-years">[2025 – 2029] <!-- EDIT HERE --></span>
+              </div>
+              <h3 class="step-title">B.Tech in Computer Science and Engineering</h3>
+              <p class="step-institution">Dhemaji Engineering College, Dhemaji <!-- EDIT HERE --></p>
+              <p class="step-desc">Exploring different technologies, participating in hackathons, and working on ideas
+                that aim to solve real-world problems through practical, technology-driven solutions. Selected as a
+                GeeksforGeeks Campus Mantri for a six-month tenure, supporting technical learning and coding culture
+                among fellow students.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: SKILLS & TECHNOLOGIES -->
+    <section id="skills" class="section section-alt">
+      <div class="container">
+        <div class="section-title-wrap scroll-reveal">
+          <span class="section-kicker">04 / Toolbox</span>
+          <h2 class="section-heading">Skills &amp; Technologies</h2>
+          <p class="section-desc">Technologies, languages, and tools I actively use and learn.</p>
+        </div>
+
+        <div class="skills-simple-grid">
+          <!-- Web Development -->
+          <div class="skills-box scroll-reveal">
+            <h3 class="skills-box-title">Web Development</h3>
+            <p class="skills-box-desc">Building clean, responsive, and accessible digital interfaces.</p>
+            <div class="pill-tags">
+              <span class="pill">HTML5</span>
+              <span class="pill">CSS3</span>
+              <span class="pill">JavaScript</span>
+              <span class="pill">Tailwind CSS</span>
+              <span class="pill">Bootstrap</span>
+            </div>
+          </div>
+
+          <!-- Programming -->
+          <div class="skills-box scroll-reveal">
+            <h3 class="skills-box-title">Programming</h3>
+            <p class="skills-box-desc">Core languages, data structures, and algorithmic logic.</p>
+            <div class="pill-tags">
+              <span class="pill">C</span>
+              <span class="pill">C++</span>
+              <span class="pill">Python</span>
+              <span class="pill">DSA</span>
+              <span class="pill">Database</span>
+            </div>
+          </div>
+
+          <!-- Tools & Technologies -->
+          <div class="skills-box scroll-reveal">
+            <h3 class="skills-box-title">Tools &amp; Workflow</h3>
+            <p class="skills-box-desc">Version control, code editor, and design software.</p>
+            <div class="pill-tags">
+              <span class="pill">Git</span>
+              <span class="pill">GitHub</span>
+              <span class="pill">VS Code</span>
+              <span class="pill">Canva</span>
+              <span class="pill">Figma</span>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: PROJECTS (IN PROGRESS) -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-title-wrap scroll-reveal">
+          <span class="section-kicker">05 / Projects</span>
+          <h2 class="section-heading">Projects In Progress</h2>
+        </div>
+
+        <div class="projects-in-progress-box scroll-reveal">
+          <div class="status-indicator-bar">
+            <span class="pulse-dot"></span>
+            <span class="status-msg">Active Development</span>
+          </div>
+
+          <h3 class="in-progress-quote">
+            “I'm currently working on a few things. This space will be updated as they take shape.”
+          </h3>
+
+          <p class="in-progress-text">
+            I am intentionally building projects that demonstrate clean code structure, solid fundamentals, and
+            thoughtful interface design.
+          </p>
+
+          <div class="simple-preview-list">
+            <div class="preview-item">
+              <span class="preview-tag">Website</span>
+
+              <h4>
+                <a href="https://dec-resources.decm.workers.dev/" target="_blank" rel="noopener noreferrer">
+                  DEC Resources
+                </a>
+              </h4>
+
+              <p>A central web portal designed to streamline access to essential digital resources, documents for the DEC community.</p>
+            </div>
+          </div>
+          <!--div class="preview-item">
+              <span class="preview-tag">Tool</span>
+              <h4>Project Name</h4>
+              <p>Project Description</p>
+            </div>
+          </div-->
+
+          <div class="projects-cta">
+            <a href="https://github.com/AnuragDutta310" target="_blank" rel="noopener noreferrer"
+              class="btn btn-outline">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+              </svg>
+              Follow Activity on GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: BEYOND CODING -->
+    <section id="beyond" class="section section-alt">
+      <div class="container">
+        <div class="section-title-wrap scroll-reveal">
+          <span class="section-kicker">06 / Interests</span>
+          <h2 class="section-heading">Beyond Coding</h2>
+          <p class="section-desc">Creative disciplines that inform my thinking, teamwork, and approach to problems.</p>
+        </div>
+
+        <div class="beyond-simple-grid">
+          <div class="interest-box scroll-reveal">
+            <span class="interest-badge">Theatre</span>
+            <h3>Drama &amp; Acting</h3>
+            <p>Performing in various drama competitions and stage shows has strengthened my acting, spontaneity, and
+              stage presence, earning me the Best Actor award on multiple occasions.</p>
+          </div>
+
+          <div class="interest-box scroll-reveal">
+            <span class="interest-badge">Writing</span>
+            <h3>Poetry &amp; Literature</h3>
+            <p>I enjoy writing poems and articles as a way to put my thoughts into words, explore different
+              perspectives, and express what I might not always say aloud. It’s my creative space beyond coding.</p>
+          </div>
+
+          <div class="interest-box scroll-reveal">
+            <span class="interest-badge">Sound</span>
+            <h3>Music</h3>
+            <p>As a Tabla Visharad, music has become more than just a passion for me. It has taught me discipline,
+              patience, and the joy of expressing myself through rhythm.</p>
+          </div>
+
+          <div class="interest-box scroll-reveal">
+            <span class="interest-badge">Visuals</span>
+            <h3>Graphic Design</h3>
+            <p>I enjoy drawing and experimenting with design, turning ideas into something I can see and share. It’s a
+              way to express my creativity beyond code and add a personal touch to my creations.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: CONTACT FORM -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-title-wrap scroll-reveal">
+          <span class="section-kicker">07 / Connect</span>
+          <h2 class="section-heading">Get In Touch</h2>
+          <p class="section-desc">Have a question, collaboration idea, or internship opportunity? Feel free to reach
+            out.</p>
+        </div>
+
+        <div class="contact-simple-layout">
+          <!-- Info Column -->
+          <div class="contact-info-col scroll-reveal">
+            <h3 class="contact-subtitle">Let's start a conversation.</h3>
+            <p class="contact-text">
+              I am always happy to discuss new opportunities, software ideas, or creative collaborations.
+            </p>
+
+            <div class="contact-details-list">
+              <div class="detail-item">
+                <span class="detail-label">Email</span>
+                <!-- EDIT HERE: Update with your personal email -->
+                <a href="mailto:anuragdutta208@gmail.com" class="detail-link">anuragdutta208@gmail.com</a>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Location</span>
+                <span class="detail-val">Dhemaji</span>
+              </div>
+            </div>
+
+            <!-- SECTION 9: SOCIAL LINKS -->
+            <div class="social-links-section">
+              <span class="detail-label">Professional Profiles</span>
+              <div class="social-buttons-row">
+                <!-- EDIT HERE: Update with your actual LinkedIn URL -->
+                <a href="https://www.linkedin.com/in/anurag-dutta-b42503388/" target="_blank" rel="noopener noreferrer"
+                  class="social-link-btn" aria-label="LinkedIn Profile">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                  </svg>
+                  <span>LinkedIn</span>
+                </a>
+
+                <!-- EDIT HERE: Update with your actual GitHub URL -->
+                <a href="https://github.com/AnuragDutta310" target="_blank" rel="noopener noreferrer"
+                  class="social-link-btn" aria-label="GitHub Profile">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                  </svg>
+                  <span>GitHub</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Form Column -->
+          <div class="contact-form-col scroll-reveal">
+            <form id="contactForm" class="clean-form" novalidate>
+              <div class="input-field" id="nameGroup">
+                <label for="userName">Name</label>
+                <input type="text" id="userName" name="name" placeholder="Your Name" required />
+                <span class="field-error" id="nameError">Please enter your name.</span>
+              </div>
+
+              <div class="input-field" id="emailGroup">
+                <label for="userEmail">Email</label>
+                <input type="email" id="userEmail" name="email" placeholder="your.email@example.com" required />
+                <span class="field-error" id="emailError">Please enter a valid email address.</span>
+              </div>
+
+              <div class="input-field" id="phoneGroup">
+                <label for="userPhone">Mobile Number (Optional)</label>
+                <input type="tel" id="userPhone" name="phone" placeholder="Your mobile number" autocomplete="tel">
+                <span class="field-error" id="phoneError">Please enter a valid mobile number.</span>
+              </div>
+
+              <div class="input-field" id="messageGroup">
+                <label for="userMessage">Message</label>
+                <textarea id="userMessage" name="message" rows="4" placeholder="Your message..." required></textarea>
+                <span class="field-error" id="messageError">Please enter a message (at least 10 characters).</span>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block" id="submitBtn">
+                <span class="btn-text">Send Message</span>
+                <span class="btn-loading" aria-hidden="true"></span>
+              </button>
+
+              <div class="form-feedback" id="formFeedback" role="status"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- SECTION 10: FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-left">
+        <span class="footer-brand">Thank You!</span>
+
+      </div>
+
+      <div class="footer-right">
+        <p class="copyright">© <span id="currentYear">2026</span> Anurag Dutta. All rights reserved.</p>
+        <button class="to-top-link" id="backToTopBtn" aria-label="Back to top">
+          Back to top ↑
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactivity Script -->
+  <script src="script.js"></script>
+</body>
+
+</html>
