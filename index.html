@@ -475,7 +475,8 @@
                 </a>
               </h4>
 
-              <p>A central web portal designed to streamline access to essential digital resources, documents for the DEC community.</p>
+              <p>A central web portal designed to streamline access to essential digital resources, documents for the
+                DEC community.</p>
             </div>
           </div>
           <!--div class="preview-item">
@@ -599,7 +600,8 @@
 
           <!-- Form Column -->
           <div class="contact-form-col scroll-reveal">
-            <form id="contactForm" class="clean-form" novalidate>
+            <form id="contactForm" class="clean-form" name="contact" method="POST" data-netlify="true">
+              <input type="hidden" name="form-name" value="contact">
               <div class="input-field" id="nameGroup">
                 <label for="userName">Name</label>
                 <input type="text" id="userName" name="name" placeholder="Your Name" required />

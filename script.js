@@ -171,60 +171,67 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
+  
+if (contactForm) {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
 
-      const validName = checkField(nameInput, nameGroup, nameInput.value.trim().length >= 2);
-      const validEmail = checkField(emailInput, emailGroup, emailRegex.test(emailInput.value.trim()));
-      const validMsg = checkField(messageInput, messageGroup, messageInput.value.trim().length >= 10);
+    const validName = checkField(
+      nameInput,
+      nameGroup,
+      nameInput.value.trim().length >= 2
+    );
 
-      if (!validName || !validEmail || !validMsg) {
-        showFeedback('Please correct the highlighted fields.', 'error');
-        return;
+    const validEmail = checkField(
+      emailInput,
+      emailGroup,
+      emailRegex.test(emailInput.value.trim())
+    );
+
+    const validMsg = checkField(
+      messageInput,
+      messageGroup,
+      messageInput.value.trim().length >= 10
+    );
+
+    if (!validName || !validEmail || !validMsg) {
+      showFeedback('Please correct the highlighted fields.', 'error');
+      return;
+    }
+
+    submitBtn.classList.add('loading');
+    submitBtn.disabled = true;
+
+    try {
+      const formData = new FormData(contactForm);
+
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: new URLSearchParams(formData).toString()
+      });
+
+      if (!response.ok) {
+        throw new Error('Form submission failed');
       }
 
-      // Check if user has wired up backend endpoint (e.g. Formspree)
-      const action = contactForm.getAttribute('action');
+      showFeedback('Thank you! Your message was sent.', 'success');
+      contactForm.reset();
 
-      if (action && action.startsWith('http')) {
-        submitBtn.classList.add('loading');
-        submitBtn.disabled = true;
+    } catch (error) {
+      showFeedback(
+        'Could not send your message. Please try again.',
+        'error'
+      );
+    } finally {
+      submitBtn.classList.remove('loading');
+      submitBtn.disabled = false;
+    }
+  });
+}
 
-        fetch(action, {
-          method: 'POST',
-          body: new FormData(contactForm),
-          headers: { 'Accept': 'application/json' }
-        })
-          .then(res => {
-            submitBtn.classList.remove('loading');
-            submitBtn.disabled = false;
-            if (res.ok) {
-              showFeedback('Thank you! Your message was sent.', 'success');
-              contactForm.reset();
-            } else {
-              showFeedback('Could not send message. Please email directly.', 'error');
-            }
-          })
-          .catch(() => {
-            submitBtn.classList.remove('loading');
-            submitBtn.disabled = false;
-            showFeedback('Network error. Please email directly.', 'error');
-          });
-      } else {
-        // UI preview feedback
-        submitBtn.classList.add('loading');
-        submitBtn.disabled = true;
-
-        setTimeout(() => {
-          submitBtn.classList.remove('loading');
-          submitBtn.disabled = false;
-          showFeedback(`Thank you, ${nameInput.value.trim()}! Your message preview was validated.`, 'success');
-          contactForm.reset();
-        }, 700);
-      }
-    });
-  }
 
   function showFeedback(text, type) {
     if (!formFeedback) return;
